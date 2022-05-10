@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block head %}
+<title>内容閲覧</title>
+{% endblock %}
+
+{% block content %}
+<p>タイトル：{{review.title}}</p>
+
+<!-- markdownフィルタを追加する -->
+{{ review.content | markdown }}
+
+<p><a href='/'>一覧に戻る</a> | <a href='/edit/{{ review.id }}'>編集</a> | <a href='/destroy/{{ review.id }}'>削除</a></p>
+
+{% endblock %}
