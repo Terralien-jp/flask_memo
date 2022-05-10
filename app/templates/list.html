@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block head %}
+<title>ほむぺ</title>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ message }}</h1>
+
+    <table>
+        <th>ID</th><th>Title</th>
+        {% for review in reviews %}
+        <tr>
+            <td>{{ review.id }}</td>
+            <td><a href='/show/{{review.id}}'>{{ review.title }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p><a href="/new">新規</a></p>
+
+{% endblock %}
